@@ -10,27 +10,33 @@ function App() {
   }
   
   const Descrease = () => {
-    setCount(count - 1)
+    if (count > 0) {
+      setCount(count - 1)
+    }
   } 
   
   return (
     <>
-   <div style={{height: "100vh",
-     display: "flex",
-     flexDirection: "column",
-     justifyContent: "center",
-     alignItems: "center",
-     gap: "20px",}}>
-      <h1>Counter App</h1>
-      <h2>{count}</h2>
-      <div style={{display:"flex",gap:"15px"}}>
-        <button onClick={Increase}>+</button>
-        <button onClick={Descrease}>-</button>
+      <div style={{
+        height: "30vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        gap: "10px",
+      }}>
+        <h1>Counter App</h1>
+        <h1>{count}</h1>
       </div>
-   </div>
-   <IncreaseButton onIncrease={Increase} />
-   <DescreaseButton onDescrease={Descrease} /> 
-  </>
+      <div style={{
+        display: "flex",
+        justifyContent: "center",
+        gap: "20px"
+      }}>
+        <IncreaseButton onIncrease={Increase} />
+        <DescreaseButton onDescrease={Descrease} />
+      </div>
+    </>
   )
 }
 
